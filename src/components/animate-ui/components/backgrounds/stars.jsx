@@ -1,8 +1,8 @@
-'use client';;
-import * as React from 'react';
-import { motion, useMotionValue, useSpring } from 'motion/react';
+"use client";
+import * as React from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 function generateStars(count, starColor) {
   const shadows = [];
@@ -11,7 +11,7 @@ function generateStars(count, starColor) {
     const y = Math.floor(Math.random() * 4000) - 2000;
     shadows.push(`${x}px ${y}px ${starColor}`);
   }
-  return shadows.join(', ');
+  return shadows.join(", ");
 }
 
 function StarLayer({
