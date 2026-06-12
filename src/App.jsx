@@ -31,19 +31,21 @@ export default function App() {
         className="fixed inset-0 z-0"
         style={{ background: settings.gradient }}
       >
-        <GravityStarsBackground
-          className="absolute inset-0"
-          starColor={settings.starColor}
-          starsCount={settings.starsCount}
-          starsSize={settings.starsSize}
-          starsOpacity={settings.starsOpacity}
-          movementSpeed={settings.movementSpeed}
-          glowEnabled={settings.glowEnabled}
-          glowIntensity={settings.glowIntensity}
-          mouseGravity={settings.mouseGravity}
-          mouseInfluence={settings.mouseInfluence}
-          gravityStrength={settings.gravityStrength}
-        />
+        {settings.starsEnabled && (
+          <GravityStarsBackground
+            className="absolute inset-0"
+            starColor={settings.starColor}
+            starsCount={settings.starsCount}
+            starsSize={settings.starsSize}
+            starsOpacity={settings.starsOpacity}
+            movementSpeed={settings.movementSpeed}
+            glowEnabled={settings.glowEnabled}
+            glowIntensity={settings.glowIntensity}
+            mouseGravity={settings.mouseGravity}
+            mouseInfluence={settings.mouseInfluence}
+            gravityStrength={settings.gravityStrength}
+          />
+        )}
       </div>
 
       <Navbar />

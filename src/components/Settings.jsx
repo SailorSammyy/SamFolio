@@ -137,6 +137,9 @@ export default function BackgroundSettings({ settings, onChange }) {
 
           <SectionLabel>Stars</SectionLabel>
 
+          <Toggle label="Enable stars" checked={settings.starsEnabled} onChange={(v) => set('starsEnabled', v)} />
+
+          {settings.starsEnabled && (<>
           <div className="flex items-center gap-3">
             <span className="text-xs text-white/60 shrink-0">Color</span>
             <div className="flex items-center gap-2 ml-auto">
@@ -165,6 +168,7 @@ export default function BackgroundSettings({ settings, onChange }) {
           <Slider label="Size"          value={settings.starsSize}    min={0.5} max={5}   step={0.5}  onChange={(v) => set('starsSize', v)} />
           <Slider label="Opacity"       value={settings.starsOpacity} min={0.1} max={1}   step={0.05} onChange={(v) => set('starsOpacity', v)} format={(v) => v.toFixed(2)} />
           <Slider label="Speed"         value={settings.movementSpeed} min={0}  max={2}   step={0.05} onChange={(v) => set('movementSpeed', v)} format={(v) => v.toFixed(2)} />
+          </>)}
 
           <SectionLabel>Glow</SectionLabel>
           <Toggle label="Enable glow" checked={settings.glowEnabled} onChange={(v) => set('glowEnabled', v)} />
@@ -210,6 +214,7 @@ export default function BackgroundSettings({ settings, onChange }) {
 
 export const DEFAULT_SETTINGS = {
   gradient:       'radial-gradient(ellipse at bottom, #262626 0%, #000000 100%)',
+  starsEnabled:   true,
   starColor:      '#ffffff',
   starsCount:     90,
   starsSize:      2,
